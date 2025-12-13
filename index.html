@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      CeylonEcoTrails - Sustainable Trekking & Eco-Tourism in Sri Lanka
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .hero-overlay {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+      }
+      .nav-scrolled {
+        background-color: rgba(22, 101, 52, 0.95);
+        backdrop-filter: blur(10px);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-white text-2xl font-bold">
+            <i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-white hover:text-green-400 transition"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-white hover:text-green-400 transition"
+              >About Us</a
+            >
+            <a
+              href="tours.html"
+              class="text-white hover:text-green-400 transition"
+              >Tours</a
+            >
+            <a
+              href="events.html"
+              class="text-white hover:text-green-400 transition"
+              >Events</a
+            >
+            <a
+              href="gallery.html"
+              class="text-white hover:text-green-400 transition"
+              >Gallery</a
+            >
+            <a
+              href="contact.html"
+              class="text-white hover:text-green-400 transition"
+              >Contact</a
+            >
+            <a
+              href="booking.html"
+              class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition"
+              >Book Now</a
+            >
+          </div>
+          <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
+          <a
+            href="index.html"
+            class="block text-white hover:text-green-400 transition"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block text-white hover:text-green-400 transition"
+            >About Us</a
+          >
+          <a
+            href="tours.html"
+            class="block text-white hover:text-green-400 transition"
+            >Tours</a
+          >
+          <a
+            href="events.html"
+            class="block text-white hover:text-green-400 transition"
+            >Events</a
+          >
+          <a
+            href="gallery.html"
+            class="block text-white hover:text-green-400 transition"
+            >Gallery</a
+          >
+          <a
+            href="contact.html"
+            class="block text-white hover:text-green-400 transition"
+            >Contact</a
+          >
+          <a
+            href="booking.html"
+            class="block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition text-center"
+            >Book Now</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070"
+          alt="Sri Lanka Trekking"
+          class="w-full h-full object-cover"
+        />
+        <div class="hero-overlay absolute inset-0"></div>
+      </div>
+      <div
+        class="relative z-10 h-full flex items-center justify-center text-center text-white px-4"
+      >
+        <div class="max-w-4xl">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            Discover Sri Lanka's Hidden Trails
+          </h1>
+          <p class="text-xl md:text-2xl mb-8">
+            Experience authentic eco-adventures through pristine rainforests,
+            cascading waterfalls, and cultural heritage sites
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tours.html"
+              class="bg-green-600 text-white px-8 py-4 rounded-full text-lg hover:bg-green-700 transition transform hover:scale-105"
+              >Explore Tours</a
+            >
+            <a
+              href="about.html"
+              class="bg-white text-green-800 px-8 py-4 rounded-full text-lg hover:bg-gray-100 transition transform hover:scale-105"
+              >Our Story</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i class="fas fa-chevron-down text-white text-3xl"></i>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            Why Choose CeylonEcoTrails?
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Sustainable tourism that respects nature and empowers communities
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center p-8 rounded-lg hover:shadow-xl transition">
+            <div
+              class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-leaf text-green-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">Eco-Friendly</h3>
+            <p class="text-gray-600">
+              100% carbon-neutral treks with zero waste principles and
+              biodiversity conservation
+            </p>
+          </div>
+          <div class="text-center p-8 rounded-lg hover:shadow-xl transition">
+            <div
+              class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-users text-blue-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+              Community Support
+            </h3>
+            <p class="text-gray-600">
+              Partnering with local communities to create sustainable
+              livelihoods
+            </p>
+          </div>
+          <div class="text-center p-8 rounded-lg hover:shadow-xl transition">
+            <div
+              class="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-star text-yellow-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">Expert Guides</h3>
+            <p class="text-gray-600">
+              Certified naturalists and cultural experts leading every adventure
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Tours Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            Featured Adventures
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Handpicked experiences for the ultimate eco-explorer
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070"
+              alt="Rainforest Trek"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <div class="text-green-600 font-semibold mb-2">
+                3 Days | Moderate
+              </div>
+              <h3 class="text-2xl font-bold mb-3 text-gray-800">
+                Sinharaja Rainforest Expedition
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Explore UNESCO World Heritage rainforest teeming with endemic
+                species and ancient trees
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-green-600">$299</span>
+                <a
+                  href="booking.html?tour=sinharaja"
+                  class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1580552002308-fdf170426aea?q=80&w=2070"
+              alt="Waterfall Trek"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <div class="text-green-600 font-semibold mb-2">2 Days | Easy</div>
+              <h3 class="text-2xl font-bold mb-3 text-gray-800">
+                Knuckles Mountain Waterfalls
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Discover hidden waterfalls and panoramic views in the Knuckles
+                mountain range
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-green-600">$199</span>
+                <a
+                  href="booking.html?tour=knuckles"
+                  class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1552055563-3d7b7e7c5e6c?q=80&w=2070"
+              alt="Cultural Trek"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <div class="text-green-600 font-semibold mb-2">
+                4 Days | Challenging
+              </div>
+              <h3 class="text-2xl font-bold mb-3 text-gray-800">
+                Cultural Heritage Trail
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Trek through ancient kingdoms, visit sacred sites and experience
+                village life
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-green-600">$399</span>
+                <a
+                  href="booking.html?tour=cultural"
+                  class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="tours.html"
+            class="inline-block bg-green-600 text-white px-8 py-4 rounded-full text-lg hover:bg-green-700 transition"
+            >View All Tours</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-green-700 text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">What Our Adventurers Say</h2>
+          <p class="text-green-100 text-lg">
+            Real experiences from real explorers
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white text-gray-800 p-8 rounded-lg">
+            <div class="flex mb-4">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <p class="mb-4 italic">
+              "An unforgettable experience! The guides were knowledgeable, the
+              trails were stunning, and I loved how they prioritize
+              sustainability."
+            </p>
+            <div class="font-bold">Sarah Mitchell</div>
+            <div class="text-gray-600 text-sm">United Kingdom</div>
+          </div>
+          <div class="bg-white text-gray-800 p-8 rounded-lg">
+            <div class="flex mb-4">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <p class="mb-4 italic">
+              "The Sinharaja trek was magical. Seeing endemic birds and staying
+              in eco-lodges made it truly authentic."
+            </p>
+            <div class="font-bold">Rajesh Kumar</div>
+            <div class="text-gray-600 text-sm">India</div>
+          </div>
+          <div class="bg-white text-gray-800 p-8 rounded-lg">
+            <div class="flex mb-4">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <p class="mb-4 italic">
+              "Perfect blend of adventure and cultural immersion. The team's
+              commitment to local communities is inspiring."
+            </p>
+            <div class="font-bold">Emma Chen</div>
+            <div class="text-gray-600 text-sm">Australia</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6">
+          Ready for Your Next Adventure?
+        </h2>
+        <p class="text-gray-600 text-xl mb-8">
+          Join us in preserving nature while creating unforgettable memories
+        </p>
+        <a
+          href="booking.html"
+          class="inline-block bg-green-600 text-white px-12 py-4 rounded-full text-lg hover:bg-green-700 transition transform hover:scale-105"
+          >Start Your Journey</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">
+              <i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails
+            </h3>
+            <p class="text-gray-400">
+              Sustainable trekking and eco-tourism in the heart of Sri Lanka.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-400 hover:text-green-400 transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="tours.html"
+                  class="text-gray-400 hover:text-green-400 transition"
+                  >Tours</a
+                >
+              </li>
+              <li>
+                <a
+                  href="events.html"
+                  class="text-gray-400 hover:text-green-400 transition"
+                  >Events</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gallery.html"
+                  class="text-gray-400 hover:text-green-400 transition"
+                  >Gallery</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-4">Contact</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <i class="fas fa-map-marker-alt text-green-400"></i> Kandy, Sri
+                Lanka
+              </li>
+              <li>
+                <i class="fas fa-phone text-green-400"></i> +94 77 123 4567
+              </li>
+              <li>
+                <i class="fas fa-envelope text-green-400"></i>
+                info@ceylonecotrails.lk
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-green-400 text-2xl transition"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-green-400 text-2xl transition"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-green-400 text-2xl transition"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-green-400 text-2xl transition"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; 2024 CeylonEcoTrails. All rights reserved. Designed with care
+            for nature.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

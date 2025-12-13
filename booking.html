@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure - CeylonEcoTrails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-scrolled {
+            background-color: rgba(22, 101, 52, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-green-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white text-2xl font-bold">
+                    <a href="index.html"><i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white hover:text-green-400 transition">Home</a>
+                    <a href="about.html" class="text-white hover:text-green-400 transition">About Us</a>
+                    <a href="tours.html" class="text-white hover:text-green-400 transition">Tours</a>
+                    <a href="events.html" class="text-white hover:text-green-400 transition">Events</a>
+                    <a href="gallery.html" class="text-white hover:text-green-400 transition">Gallery</a>
+                    <a href="contact.html" class="text-white hover:text-green-400 transition">Contact</a>
+                    <a href="booking.html" class="text-green-400 font-semibold">Book Now</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
+                <a href="index.html" class="block text-white hover:text-green-400 transition">Home</a>
+                <a href="about.html" class="block text-white hover:text-green-400 transition">About Us</a>
+                <a href="tours.html" class="block text-white hover:text-green-400 transition">Tours</a>
+                <a href="events.html" class="block text-white hover:text-green-400 transition">Events</a>
+                <a href="gallery.html" class="block text-white hover:text-green-400 transition">Gallery</a>
+                <a href="contact.html" class="block text-white hover:text-green-400 transition">Contact</a>
+                <a href="booking.html" class="block text-green-400 font-semibold text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-green-700 to-green-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Book Your Adventure</h1>
+            <p class="text-xl md:text-2xl text-green-100">Complete your booking in just a few simple steps</p>
+        </div>
+    </section>
+
+    <!-- Progress Steps -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div id="step1-indicator" class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">1</div>
+                        <div class="ml-2 hidden md:block font-semibold text-green-600">Select Tour</div>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-300"></div>
+                    <div class="flex items-center">
+                        <div id="step2-indicator" class="w-10 h-10 rounded-full bg-gray-300 text-white flex items-center justify-center font-bold">2</div>
+                        <div class="ml-2 hidden md:block font-semibold text-gray-400">Details</div>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-300"></div>
+                    <div class="flex items-center">
+                        <div id="step3-indicator" class="w-10 h-10 rounded-full bg-gray-300 text-white flex items-center justify-center font-bold">3</div>
+                        <div class="ml-2 hidden md:block font-semibold text-gray-400">Payment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8">
+                <form id="bookingForm">
+
+                    <!-- Step 1: Select Tour -->
+                    <div id="step1" class="step active">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Select Your Tour</h2>
+                        <div class="space-y-4">
+                            <div class="border-2 border-gray-300 rounded-lg p-4 hover:border-green-600 cursor-pointer tour-option" data-tour="sinharaja" data-price="299">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <input type="radio" name="tour" value="sinharaja" id="tour-sinharaja" class="w-5 h-5 text-green-600">
+                                        <label for="tour-sinharaja" class="ml-4 cursor-pointer">
+                                            <h3 class="text-xl font-bold text-gray-800">Sinharaja Rainforest Expedition</h3>
+                                            <p class="text-gray-600">3 Days / 2 Nights - Moderate</p>
+                                        </label>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-green-600">$299</div>
+                                        <div class="text-sm text-gray-600">per person</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-2 border-gray-300 rounded-lg p-4 hover:border-green-600 cursor-pointer tour-option" data-tour="knuckles" data-price="199">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <input type="radio" name="tour" value="knuckles" id="tour-knuckles" class="w-5 h-5 text-green-600">
+                                        <label for="tour-knuckles" class="ml-4 cursor-pointer">
+                                            <h3 class="text-xl font-bold text-gray-800">Knuckles Mountain Waterfalls</h3>
+                                            <p class="text-gray-600">2 Days / 1 Night - Easy</p>
+                                        </label>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-green-600">$199</div>
+                                        <div class="text-sm text-gray-600">per person</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-2 border-gray-300 rounded-lg p-4 hover:border-green-600 cursor-pointer tour-option" data-tour="cultural" data-price="399">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <input type="radio" name="tour" value="cultural" id="tour-cultural" class="w-5 h-5 text-green-600">
+                                        <label for="tour-cultural" class="ml-4 cursor-pointer">
+                                            <h3 class="text-xl font-bold text-gray-800">Cultural Heritage Trail</h3>
+                                            <p class="text-gray-600">4 Days / 3 Nights - Challenging</p>
+                                        </label>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-green-600">$399</div>
+                                        <div class="text-sm text-gray-600">per person</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-2 border-gray-300 rounded-lg p-4 hover:border-green-600 cursor-pointer tour-option" data-tour="yala" data-price="349">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <input type="radio" name="tour" value="yala" id="tour-yala" class="w-5 h-5 text-green-600">
+                                        <label for="tour-yala" class="ml-4 cursor-pointer">
+                                            <h3 class="text-xl font-bold text-gray-800">Yala Wildlife Safari Trek</h3>
+                                            <p class="text-gray-600">2 Days / 1 Night - Easy</p>
+                                        </label>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-green-600">$349</div>
+                                        <div class="text-sm text-gray-600">per person</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-2 border-gray-300 rounded-lg p-4 hover:border-green-600 cursor-pointer tour-option" data-tour="horton" data-price="129">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <input type="radio" name="tour" value="horton" id="tour-horton" class="w-5 h-5 text-green-600">
+                                        <label for="tour-horton" class="ml-4 cursor-pointer">
+                                            <h3 class="text-xl font-bold text-gray-800">Horton Plains & World's End</h3>
+                                            <p class="text-gray-600">1 Day - Moderate</p>
+                                        </label>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-green-600">$129</div>
+                                        <div class="text-sm text-gray-600">per person</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="nextToStep2" class="mt-8 w-full bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">
+                            Continue to Details <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Details -->
+                    <div id="step2" class="step">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Your Details</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Email Address *</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Phone Number *</label>
+                                <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Country *</label>
+                                <input type="text" name="country" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Number of People *</label>
+                                <input type="number" name="people" min="1" max="15" value="1" required id="numPeople" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-semibold mb-2">Preferred Date *</label>
+                                <input type="date" name="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-semibold mb-2">Special Requirements or Dietary Restrictions</label>
+                                <textarea name="specialRequirements" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none resize-none"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 mt-8">
+                            <button type="button" id="backToStep1" class="flex-1 bg-gray-300 text-gray-800 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-400 transition">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </button>
+                            <button type="button" id="nextToStep3" class="flex-1 bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">
+                                Continue to Payment <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div id="step3" class="step">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Payment Information</h2>
+
+                        <!-- Booking Summary -->
+                        <div class="bg-green-50 p-6 rounded-lg mb-8">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Booking Summary</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Selected Tour:</span>
+                                    <span class="font-semibold" id="summaryTour"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Price per person:</span>
+                                    <span class="font-semibold" id="summaryPrice"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Number of people:</span>
+                                    <span class="font-semibold" id="summaryPeople"></span>
+                                </div>
+                                <div class="border-t-2 border-green-200 pt-2 mt-2 flex justify-between text-xl">
+                                    <span class="font-bold text-gray-800">Total Amount:</span>
+                                    <span class="font-bold text-green-600" id="summaryTotal"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-4">Select Payment Method</label>
+                            <div class="space-y-3">
+                                <label class="border-2 border-gray-300 rounded-lg p-4 flex items-center cursor-pointer hover:border-green-600 transition">
+                                    <input type="radio" name="paymentMethod" value="card" checked class="w-5 h-5 text-green-600">
+                                    <span class="ml-4 font-semibold">Credit / Debit Card</span>
+                                    <div class="ml-auto flex gap-2">
+                                        <i class="fab fa-cc-visa text-3xl text-blue-600"></i>
+                                        <i class="fab fa-cc-mastercard text-3xl text-red-600"></i>
+                                        <i class="fab fa-cc-amex text-3xl text-blue-500"></i>
+                                    </div>
+                                </label>
+                                <label class="border-2 border-gray-300 rounded-lg p-4 flex items-center cursor-pointer hover:border-green-600 transition">
+                                    <input type="radio" name="paymentMethod" value="paypal" class="w-5 h-5 text-green-600">
+                                    <span class="ml-4 font-semibold">PayPal</span>
+                                    <i class="fab fa-paypal text-3xl text-blue-700 ml-auto"></i>
+                                </label>
+                                <label class="border-2 border-gray-300 rounded-lg p-4 flex items-center cursor-pointer hover:border-green-600 transition">
+                                    <input type="radio" name="paymentMethod" value="bank" class="w-5 h-5 text-green-600">
+                                    <span class="ml-4 font-semibold">Bank Transfer</span>
+                                    <i class="fas fa-university text-3xl text-gray-600 ml-auto"></i>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Card Details (shown when card is selected) -->
+                        <div id="cardDetails" class="space-y-6 mb-8">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Card Number</label>
+                                <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Cardholder Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">Expiry Date</label>
+                                    <input type="text" placeholder="MM/YY" maxlength="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">CVV</label>
+                                    <input type="text" placeholder="123" maxlength="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Currency Selection -->
+                        <div class="mb-8">
+                            <label class="block text-gray-700 font-semibold mb-2">Preferred Currency</label>
+                            <select name="currency" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none">
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="LKR">LKR - Sri Lankan Rupee</option>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                            </select>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="mb-8">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" required class="w-5 h-5 text-green-600 mt-1">
+                                <span class="ml-3 text-gray-700">I agree to the <a href="#" class="text-green-600 hover:underline">Terms and Conditions</a> and <a href="#" class="text-green-600 hover:underline">Cancellation Policy</a></span>
+                            </label>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <button type="button" id="backToStep2" class="flex-1 bg-gray-300 text-gray-800 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-400 transition">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </button>
+                            <button type="submit" class="flex-1 bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">
+                                Complete Booking <i class="fas fa-check ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Badge -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center justify-center gap-8 text-center">
+                <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fas fa-lock text-green-600 text-2xl"></i>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
+                    <span>SSL Encrypted</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fas fa-undo text-green-600 text-2xl"></i>
+                    <span>Free Cancellation (7 days)</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fas fa-headset text-green-600 text-2xl"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4"><i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails</h3>
+                    <p class="text-gray-400">Sustainable trekking and eco-tourism in the heart of Sri Lanka.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-green-400 transition">About Us</a></li>
+                        <li><a href="tours.html" class="text-gray-400 hover:text-green-400 transition">Tours</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-green-400 transition">Events</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-green-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt text-green-400"></i> Kandy, Sri Lanka</li>
+                        <li><i class="fas fa-phone text-green-400"></i> +94 77 123 4567</li>
+                        <li><i class="fas fa-envelope text-green-400"></i> info@ceylonecotrails.lk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CeylonEcoTrails. All rights reserved. Designed with care for nature.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>
