@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - CeylonEcoTrails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-scrolled {
+            background-color: rgba(22, 101, 52, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            color: white;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .category-btn.active {
+            background-color: #16a34a;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <?php include 'navbar.php'; ?>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-green-700 to-green-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Gallery</h1>
+            <p class="text-xl md:text-2xl text-green-100">Breathtaking moments from our eco-adventures</p>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-white sticky top-20 z-40 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="category-btn active px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-category="all">All</button>
+                <button class="category-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-category="landscapes">Landscapes</button>
+                <button class="category-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-category="wildlife">Wildlife</button>
+                <button class="category-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-category="adventures">Adventures</button>
+                <button class="category-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-category="culture">Culture</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
+
+                <!-- Landscapes -->
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="landscapes">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600" alt="Mountain vista" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Mountain Vista</h3>
+                            <p class="text-sm">Knuckles Range</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="landscapes">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600 alt="Waterfall" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Diyaluma Falls</h3>
+                            <p class="text-sm">Central Highlands</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="landscapes">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600" alt="Misty mountains" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">World's End</h3>
+                            <p class="text-sm">Horton Plains</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="landscapes">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600" alt="Rainforest canopy" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Rainforest Canopy</h3>
+                            <p class="text-sm">Sinharaja Forest</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wildlife -->
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=600" alt="Leopard" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Sri Lankan Leopard</h3>
+                            <p class="text-sm">Yala National Park</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?q=80&w=600" alt="Elephant" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Elephant Herd</h3>
+                            <p class="text-sm">Udawalawe</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=600" alt="Bird" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Ceylon Blue Magpie</h3>
+                            <p class="text-sm">Endemic Species</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=600" alt="Monkey" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Purple-faced Langur</h3>
+                            <p class="text-sm">Sinharaja</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adventures -->
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="adventures">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=600" alt="Trekking group" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Group Trek</h3>
+                            <p class="text-sm">Mountain Adventure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="adventures">
+                    <img src="https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?q=80&w=600" alt="Camping" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Eco Camping</h3>
+                            <p class="text-sm">Under the Stars</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="adventures">
+                    <img src="https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?q=80&w=600" alt="River crossing" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">River Crossing</h3>
+                            <p class="text-sm">Rainforest Trek</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="adventures">
+                    <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=600" alt="Summit" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Summit Success</h3>
+                            <p class="text-sm">Peak Achievement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Culture -->
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="culture">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600" alt="Temple" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Ancient Temple</h3>
+                            <p class="text-sm">Cultural Heritage</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="culture">
+                    <img src="https://images.unsplash.com/photo-1541356665065-22676f35dd40?q=80&w=600" alt="Village life" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Village Life</h3>
+                            <p class="text-sm">Local Community</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="culture">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600" alt="Traditional craft" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Traditional Crafts</h3>
+                            <p class="text-sm">Artisan Workshop</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="culture">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600" alt="Local cuisine" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Traditional Meal</h3>
+                            <p class="text-sm">Authentic Cuisine</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Mixed Content -->
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="landscapes">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=600" alt="Sunrise" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Golden Sunrise</h3>
+                            <p class="text-sm">Mountain Peak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="adventures">
+                    <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=600" alt="Hikers" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Trail Explorers</h3>
+                            <p class="text-sm">Guided Trek</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1517486430290-35657bdcef51?q=80&w=600" alt="Peacock" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Indian Peafowl</h3>
+                            <p class="text-sm">National Parks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden" data-category="landscapes">
+                    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=600" alt="Forest path" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h3 class="font-bold">Forest Trail</h3>
+                            <p class="text-sm">Eco Path</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button id="closeLightbox" class="absolute top-8 right-8 text-white text-4xl hover:text-gray-300 z-10">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="prevImage" class="absolute left-8 text-white text-4xl hover:text-gray-300 z-10">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="nextImage" class="absolute right-8 text-white text-4xl hover:text-gray-300 z-10">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <img id="lightboxImage" src="" alt="Gallery image">
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">Create Your Own Memories</h2>
+            <p class="text-gray-600 text-xl mb-8">Join us on an unforgettable eco-adventure</p>
+            <a href="tours.html" class="inline-block bg-green-600 text-white px-12 py-4 rounded-full text-lg hover:bg-green-700 transition transform hover:scale-105">Explore Tours</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4"><i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails</h3>
+                    <p class="text-gray-400">Sustainable trekking and eco-tourism in the heart of Sri Lanka.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-green-400 transition">About Us</a></li>
+                        <li><a href="tours.html" class="text-gray-400 hover:text-green-400 transition">Tours</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-green-400 transition">Events</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-green-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt text-green-400"></i> Kandy, Sri Lanka</li>
+                        <li><i class="fas fa-phone text-green-400"></i> +94 77 123 4567</li>
+                        <li><i class="fas fa-envelope text-green-400"></i> info@ceylonecotrails.lk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CeylonEcoTrails. All rights reserved. Designed with care for nature.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeLightbox = document.getElementById('closeLightbox');
+        let currentImageIndex = 0;
+        let visibleImages = [];
+
+        function updateVisibleImages() {
+            visibleImages = Array.from(galleryItems).filter(item => item.style.display !== 'none');
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                updateVisibleImages();
+                currentImageIndex = visibleImages.indexOf(item);
+                const img = item.querySelector('img');
+                lightboxImage.src = img.src.replace('q=80&w=600', 'q=80&w=1920');
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        document.getElementById('prevImage').addEventListener('click', () => {
+            updateVisibleImages();
+            currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+            const img = visibleImages[currentImageIndex].querySelector('img');
+            lightboxImage.src = img.src.replace('q=80&w=600', 'q=80&w=1920');
+        });
+
+        document.getElementById('nextImage').addEventListener('click', () => {
+            updateVisibleImages();
+            currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
+            const img = visibleImages[currentImageIndex].querySelector('img');
+            lightboxImage.src = img.src.replace('q=80&w=600', 'q=80&w=1920');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                document.getElementById('prevImage').click();
+            } else if (e.key === 'ArrowRight') {
+                document.getElementById('nextImage').click();
+            }
+        });
+
+        updateVisibleImages();
+    </script>
+</body>
+</html>

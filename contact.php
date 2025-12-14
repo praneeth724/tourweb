@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CeylonEcoTrails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-scrolled {
+            background-color: rgba(22, 101, 52, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <?php include 'navbar.php'; ?>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-green-700 to-green-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl md:text-2xl text-green-100">We'd love to hear from you. Let's plan your adventure!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-semibold mb-2">Subject *</label>
+                            <select id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="booking">Booking Question</option>
+                                <option value="custom">Custom Tour Request</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message *</label>
+                            <textarea id="message" name="message" required rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition transform hover:scale-105">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                    <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+
+                    <div class="space-y-6 mb-12">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-1">Office Location</h3>
+                                <p class="text-gray-600">123 Peradeniya Road<br>Kandy 20000<br>Sri Lanka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-1">Phone</h3>
+                                <p class="text-gray-600">+94 77 123 4567<br>+94 81 234 5678</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-1">Email</h3>
+                                <p class="text-gray-600">info@ceylonecotrails.lk<br>bookings@ceylonecotrails.lk</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-1">Office Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Connect With Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-red-600 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Response -->
+                    <div class="mt-12 bg-green-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-gray-800 mb-2">Quick Response Guarantee</h3>
+                        <p class="text-gray-600">We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">Find Us in Kandy</h2>
+            <div class="rounded-lg overflow-hidden shadow-2xl">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126650.61808956732!2d80.55283945820311!3d7.290572399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3662db149fbdd%3A0x8165d7b1c5c44b77!2sKandy%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1234567890123"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 text-lg">Quick answers to common questions</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">What is your cancellation policy?</h3>
+                    <p class="text-gray-600">We offer free cancellation up to 7 days before your tour date. Cancellations within 7 days receive a 50% refund. No-shows are not refundable.</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Do you provide transportation?</h3>
+                    <p class="text-gray-600">Yes, all our tours include transportation from designated pickup points in Kandy. For custom tours, we can arrange pickup from your hotel or preferred location.</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">What should I bring on a trek?</h3>
+                    <p class="text-gray-600">We provide a detailed packing list upon booking. Essentials include comfortable hiking shoes, water bottle, sun protection, and weather-appropriate clothing. We provide all camping equipment.</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Are your tours suitable for beginners?</h3>
+                    <p class="text-gray-600">Yes! We offer tours for all fitness levels, from easy family-friendly walks to challenging mountain treks. Each tour is clearly marked with difficulty level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-green-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Book Your Adventure?</h2>
+            <p class="text-xl text-green-100 mb-8">Browse our tours and secure your spot today</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tours.html" class="inline-block bg-white text-green-800 px-12 py-4 rounded-full text-lg hover:bg-gray-100 transition transform hover:scale-105">View Tours</a>
+                <a href="booking.html" class="inline-block bg-green-600 text-white border-2 border-white px-12 py-4 rounded-full text-lg hover:bg-green-800 transition transform hover:scale-105">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4"><i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails</h3>
+                    <p class="text-gray-400">Sustainable trekking and eco-tourism in the heart of Sri Lanka.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-green-400 transition">About Us</a></li>
+                        <li><a href="tours.html" class="text-gray-400 hover:text-green-400 transition">Tours</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-green-400 transition">Events</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-green-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt text-green-400"></i> Kandy, Sri Lanka</li>
+                        <li><i class="fas fa-phone text-green-400"></i> +94 77 123 4567</li>
+                        <li><i class="fas fa-envelope text-green-400"></i> info@ceylonecotrails.lk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CeylonEcoTrails. All rights reserved. Designed with care for nature.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact_form.js"></script>
+</body>
+</html>

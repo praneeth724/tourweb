@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CeylonEcoTrails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-scrolled {
+            background-color: rgba(22, 101, 52, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <?php include 'navbar.php'; ?>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-green-700 to-green-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Our Story</h1>
+            <p class="text-xl md:text-2xl text-green-100">Where passion for nature meets sustainable adventure</p>
+        </div>
+    </section>
+
+    <!-- Founder Story Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070" alt="Anjali Fernando" class="rounded-lg shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Meet Anjali Fernando</h2>
+                    <p class="text-gray-600 text-lg mb-4">
+                        Born and raised in the lush highlands of Kandy, Anjali Fernando grew up surrounded by Sri Lanka's breathtaking natural beauty. As a child, she spent weekends exploring mountain trails with her grandfather, a village elder who taught her the names of every plant, bird call, and hidden waterfall in the region.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-4">
+                        After completing her degree in Environmental Conservation, Anjali witnessed firsthand the impact of unsustainable tourism on Sri Lanka's precious ecosystems. Determined to make a difference, she founded CeylonEcoTrails in 2018 with a clear mission: to offer authentic trekking experiences that honor nature, empower local communities, and preserve biodiversity for future generations.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Today, Anjali leads a team of passionate conservationists and expert guides who share her vision of sustainable adventure tourism. Every trail we traverse, every community we partner with, reflects her unwavering commitment to protecting Sri Lanka's natural heritage.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200" alt="Signature" class="w-16 h-16 rounded-full">
+                        <div>
+                            <div class="font-bold text-gray-800">Anjali Fernando</div>
+                            <div class="text-gray-600">Founder & Lead Conservationist</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Mission & Values</h2>
+                <p class="text-gray-600 text-lg">Guiding principles that shape every adventure</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-seedling text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Biodiversity Conservation</h3>
+                    <p class="text-gray-600">
+                        We work closely with conservation organizations to protect endemic species and fragile ecosystems. A portion of every booking goes directly to reforestation and wildlife protection initiatives.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hands-helping text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Community Empowerment</h3>
+                    <p class="text-gray-600">
+                        We partner with local villages to create sustainable livelihoods through homestays, guide training programs, and traditional craft markets, ensuring tourism benefits flow directly to communities.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-recycle text-yellow-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Zero Waste Tourism</h3>
+                    <p class="text-gray-600">
+                        Our treks follow strict leave-no-trace principles. We use reusable equipment, ban single-use plastics, and operate carbon-neutral expeditions through offset programs and renewable energy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-20 bg-green-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Impact</h2>
+                <p class="text-green-100 text-lg">Making a difference, one trek at a time</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-5xl font-bold mb-2">3,500+</div>
+                    <div class="text-green-100 text-lg">Trees Planted</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">50+</div>
+                    <div class="text-green-100 text-lg">Local Families Supported</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">12,000+</div>
+                    <div class="text-green-100 text-lg">Happy Adventurers</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">100%</div>
+                    <div class="text-green-100 text-lg">Carbon Neutral Operations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Meet Our Expert Team</h2>
+                <p class="text-gray-600 text-lg">Passionate guides committed to your safety and enrichment</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400" alt="Team member" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-gray-800">Rohan Perera</h3>
+                    <p class="text-gray-600">Senior Trek Guide</p>
+                    <p class="text-sm text-gray-500 mt-2">15 years experience</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400" alt="Team member" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-gray-800">Dilani Silva</h3>
+                    <p class="text-gray-600">Wildlife Specialist</p>
+                    <p class="text-sm text-gray-500 mt-2">Ornithology Expert</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400" alt="Team member" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-gray-800">Kasun Bandara</h3>
+                    <p class="text-gray-600">Cultural Heritage Guide</p>
+                    <p class="text-sm text-gray-500 mt-2">History & Archaeology</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400" alt="Team member" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-gray-800">Shalini Jayawardena</h3>
+                    <p class="text-gray-600">Eco-Tourism Coordinator</p>
+                    <p class="text-sm text-gray-500 mt-2">Community Liaison</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Partnerships</h2>
+                <p class="text-gray-600 text-lg">Collaborating for a sustainable future</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <i class="fas fa-tree text-green-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Sri Lanka Forest Department</h3>
+                    <p class="text-gray-600">Official conservation partner for protected areas</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <i class="fas fa-globe text-blue-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">UNESCO Heritage Sites</h3>
+                    <p class="text-gray-600">Authorized tour operator for World Heritage locations</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <i class="fas fa-users text-yellow-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Village Tourism Network</h3>
+                    <p class="text-gray-600">Direct partnerships with 15+ local communities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">Join Our Mission</h2>
+            <p class="text-gray-600 text-xl mb-8">Be part of the change. Trek responsibly with CeylonEcoTrails.</p>
+            <a href="tours.html" class="inline-block bg-green-600 text-white px-12 py-4 rounded-full text-lg hover:bg-green-700 transition transform hover:scale-105">Explore Our Tours</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4"><i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails</h3>
+                    <p class="text-gray-400">Sustainable trekking and eco-tourism in the heart of Sri Lanka.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-green-400 transition">About Us</a></li>
+                        <li><a href="tours.html" class="text-gray-400 hover:text-green-400 transition">Tours</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-green-400 transition">Events</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-green-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt text-green-400"></i> Kandy, Sri Lanka</li>
+                        <li><i class="fas fa-phone text-green-400"></i> +94 77 123 4567</li>
+                        <li><i class="fas fa-envelope text-green-400"></i> info@ceylonecotrails.lk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CeylonEcoTrails. All rights reserved. Designed with care for nature.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

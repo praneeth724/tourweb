@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours & Experiences - CeylonEcoTrails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-scrolled {
+            background-color: rgba(22, 101, 52, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .filter-btn.active {
+            background-color: #16a34a;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <?php include 'navbar.php'; ?>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-green-700 to-green-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Tours & Experiences</h1>
+            <p class="text-xl md:text-2xl text-green-100">Discover your perfect adventure through Sri Lanka's wilderness</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white sticky top-20 z-40 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="filter-btn active px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-filter="all">All Tours</button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-filter="rainforest">Rainforest</button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-filter="mountain">Mountain</button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-filter="cultural">Cultural</button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-green-600 transition hover:bg-green-600 hover:text-white" data-filter="wildlife">Wildlife</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tours Grid -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="tours-grid">
+
+                <!-- Tour 1: Sinharaja Rainforest -->
+                <div class="tour-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2" data-category="rainforest wildlife">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070" alt="Sinharaja Rainforest" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Moderate</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-gray-600 mb-2">
+                            <i class="fas fa-clock"></i>
+                            <span>3 Days / 2 Nights</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Sinharaja Rainforest Expedition</h3>
+                        <p class="text-gray-600 mb-4">Explore UNESCO World Heritage rainforest teeming with endemic species, ancient trees, and rare birds in their natural habitat.</p>
+                        <div class="border-t pt-4 mb-4">
+                            <h4 class="font-semibold mb-2 text-gray-800">Highlights:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li><i class="fas fa-check text-green-600"></i> Endemic bird watching</li>
+                                <li><i class="fas fa-check text-green-600"></i> Canopy walkways</li>
+                                <li><i class="fas fa-check text-green-600"></i> Eco-lodge accommodation</li>
+                                <li><i class="fas fa-check text-green-600"></i> Expert naturalist guide</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 mb-4">
+                            <i class="fas fa-users"></i>
+                            <span>Max 8 people</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-green-600">$299</span>
+                                <span class="text-gray-600"> / person</span>
+                            </div>
+                            <a href="booking.html?tour=sinharaja" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 2: Knuckles Mountain -->
+                <div class="tour-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2" data-category="mountain">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070" alt="Knuckles Mountain" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Easy</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-gray-600 mb-2">
+                            <i class="fas fa-clock"></i>
+                            <span>2 Days / 1 Night</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Knuckles Mountain Waterfalls</h3>
+                        <p class="text-gray-600 mb-4">Discover hidden waterfalls and panoramic views in the Knuckles mountain range, perfect for beginners and families.</p>
+                        <div class="border-t pt-4 mb-4">
+                            <h4 class="font-semibold mb-2 text-gray-800">Highlights:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li><i class="fas fa-check text-green-600"></i> Waterfall swimming</li>
+                                <li><i class="fas fa-check text-green-600"></i> Scenic viewpoints</li>
+                                <li><i class="fas fa-check text-green-600"></i> Village homestay</li>
+                                <li><i class="fas fa-check text-green-600"></i> Traditional Sri Lankan meals</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 mb-4">
+                            <i class="fas fa-users"></i>
+                            <span>Max 12 people</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-green-600">$199</span>
+                                <span class="text-gray-600"> / person</span>
+                            </div>
+                            <a href="booking.html?tour=knuckles" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 3: Cultural Heritage -->
+                <div class="tour-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2" data-category="cultural">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070" alt="Cultural Heritage" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Challenging</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-gray-600 mb-2">
+                            <i class="fas fa-clock"></i>
+                            <span>4 Days / 3 Nights</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Cultural Heritage Trail</h3>
+                        <p class="text-gray-600 mb-4">Trek through ancient kingdoms, visit sacred sites like Sigiriya Rock and experience authentic village life.</p>
+                        <div class="border-t pt-4 mb-4">
+                            <h4 class="font-semibold mb-2 text-gray-800">Highlights:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li><i class="fas fa-check text-green-600"></i> Sigiriya & Dambulla caves</li>
+                                <li><i class="fas fa-check text-green-600"></i> Temple of the Tooth Relic</li>
+                                <li><i class="fas fa-check text-green-600"></i> Traditional craft workshops</li>
+                                <li><i class="fas fa-check text-green-600"></i> Historical expert guide</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 mb-4">
+                            <i class="fas fa-users"></i>
+                            <span>Max 10 people</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-green-600">$399</span>
+                                <span class="text-gray-600"> / person</span>
+                            </div>
+                            <a href="booking.html?tour=cultural" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 4: Yala Wildlife -->
+                <div class="tour-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2" data-category="wildlife">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=2070" alt="Yala Wildlife" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Easy</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-gray-600 mb-2">
+                            <i class="fas fa-clock"></i>
+                            <span>2 Days / 1 Night</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Yala Wildlife Safari Trek</h3>
+                        <p class="text-gray-600 mb-4">Combine safari drives with nature walks in Yala National Park, home to leopards, elephants, and diverse birdlife.</p>
+                        <div class="border-t pt-4 mb-4">
+                            <h4 class="font-semibold mb-2 text-gray-800">Highlights:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li><i class="fas fa-check text-green-600"></i> Leopard spotting</li>
+                                <li><i class="fas fa-check text-green-600"></i> Elephant herds</li>
+                                <li><i class="fas fa-check text-green-600"></i> Safari jeep tours</li>
+                                <li><i class="fas fa-check text-green-600"></i> Coastal wildlife trails</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 mb-4">
+                            <i class="fas fa-users"></i>
+                            <span>Max 6 people</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-green-600">$349</span>
+                                <span class="text-gray-600"> / person</span>
+                            </div>
+                            <a href="booking.html?tour=yala" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 5: Horton Plains -->
+                <div class="tour-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2" data-category="mountain">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070" alt="Horton Plains" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Moderate</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-gray-600 mb-2">
+                            <i class="fas fa-clock"></i>
+                            <span>1 Day</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Horton Plains & World's End</h3>
+                        <p class="text-gray-600 mb-4">Day trek through misty highlands to the dramatic cliff edge of World's End with 900m sheer drop and stunning vistas.</p>
+                        <div class="border-t pt-4 mb-4">
+                            <h4 class="font-semibold mb-2 text-gray-800">Highlights:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li><i class="fas fa-check text-green-600"></i> World's End viewpoint</li>
+                                <li><i class="fas fa-check text-green-600"></i> Baker's Falls</li>
+                                <li><i class="fas fa-check text-green-600"></i> Highland grasslands</li>
+                                <li><i class="fas fa-check text-green-600"></i> Sambar deer sightings</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 mb-4">
+                            <i class="fas fa-users"></i>
+                            <span>Max 15 people</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-green-600">$129</span>
+                                <span class="text-gray-600"> / person</span>
+                            </div>
+                            <a href="booking.html?tour=horton" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 6: Bird Watching -->
+                <div class="tour-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2" data-category="wildlife rainforest">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=2070" alt="Bird Watching" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Easy</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-gray-600 mb-2">
+                            <i class="fas fa-clock"></i>
+                            <span>3 Days / 2 Nights</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Endemic Bird Watching Expedition</h3>
+                        <p class="text-gray-600 mb-4">Specialized tour for bird enthusiasts to spot Sri Lanka's 34 endemic species across multiple habitats.</p>
+                        <div class="border-t pt-4 mb-4">
+                            <h4 class="font-semibold mb-2 text-gray-800">Highlights:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li><i class="fas fa-check text-green-600"></i> Ceylon blue magpie</li>
+                                <li><i class="fas fa-check text-green-600"></i> Sri Lanka junglefowl</li>
+                                <li><i class="fas fa-check text-green-600"></i> Expert ornithologist guide</li>
+                                <li><i class="fas fa-check text-green-600"></i> Photography workshops</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 mb-4">
+                            <i class="fas fa-users"></i>
+                            <span>Max 8 people</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-green-600">$379</span>
+                                <span class="text-gray-600"> / person</span>
+                            </div>
+                            <a href="booking.html?tour=birds" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">What's Included in Every Tour</h2>
+                <p class="text-gray-600 text-lg">Premium eco-adventure experiences with complete peace of mind</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-tie text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Expert Guides</h3>
+                    <p class="text-gray-600 text-sm">Certified naturalists & cultural experts</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-utensils text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">All Meals</h3>
+                    <p class="text-gray-600 text-sm">Organic, locally-sourced cuisine</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-home text-yellow-600 text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Accommodation</h3>
+                    <p class="text-gray-600 text-sm">Eco-lodges & village homestays</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Safety & Insurance</h3>
+                    <p class="text-gray-600 text-sm">Full coverage & first aid support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-green-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Can't Find Your Perfect Adventure?</h2>
+            <p class="text-xl text-green-100 mb-8">We offer customized tours tailored to your preferences and schedule</p>
+            <a href="contact.html" class="inline-block bg-white text-green-800 px-12 py-4 rounded-full text-lg hover:bg-gray-100 transition transform hover:scale-105">Contact Us for Custom Tours</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4"><i class="fas fa-mountain text-green-400"></i> CeylonEcoTrails</h3>
+                    <p class="text-gray-400">Sustainable trekking and eco-tourism in the heart of Sri Lanka.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-green-400 transition">About Us</a></li>
+                        <li><a href="tours.html" class="text-gray-400 hover:text-green-400 transition">Tours</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-green-400 transition">Events</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-green-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt text-green-400"></i> Kandy, Sri Lanka</li>
+                        <li><i class="fas fa-phone text-green-400"></i> +94 77 123 4567</li>
+                        <li><i class="fas fa-envelope text-green-400"></i> info@ceylonecotrails.lk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 text-2xl transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CeylonEcoTrails. All rights reserved. Designed with care for nature.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tour filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter tours
+                tourCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.dataset.category.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
