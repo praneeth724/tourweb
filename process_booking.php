@@ -147,7 +147,7 @@ try {
 
     // Bind parameters
     $stmt->bind_param(
-        "sdsssssisssds",
+        "sdsssssissssds",
         $tourName,
         $tourPrice,
         $firstName,
