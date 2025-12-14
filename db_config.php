@@ -7,7 +7,7 @@
  */
 
 // Database configuration
-define('DB_HOST', 'localhost');      // Database host (usually 'localhost' or '127.0.0.1')
+define('DB_HOST', '127.0.0.1');      // Database host (using 127.0.0.1 for MAMP TCP/IP connection)
 define('DB_PORT', '3306');            // Database port (3306 for standard, 8889 for MAMP)
 define('DB_USER', 'root');            // Database username
 define('DB_PASS', 'root');            // Database password
